@@ -20,9 +20,10 @@ do
     menu_to_path["$CHOICE_ITEM"]="$SCRIPT_CURRENT_PATH/$CHOICE_ITEM/main.sh"
 done
 
-# Setting up the project address to run its main.sh file
-PATH_TO_THE_CHOSEN_PROJECT=${menu_to_path[$MY_CHOICE]}
-bash $PATH_TO_THE_CHOSEN_PROJECT
-
-# bash $SCRIPT_CURRENT_PATH/alias/alias.sh
-# bash $SCRIPT_CURRENT_PATH/git/commit.sh
+if [ $MY_CHOICE == "[exit]" ]; then
+    exit 0
+else
+    # Setting up the project address to run its main.sh file
+    PATH_TO_THE_CHOSEN_PROJECT=${menu_to_path[$MY_CHOICE]}
+    bash $PATH_TO_THE_CHOSEN_PROJECT
+fi

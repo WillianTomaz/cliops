@@ -1,2 +1,3 @@
 alias
 git
+[exit]
