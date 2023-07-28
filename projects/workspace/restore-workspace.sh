@@ -26,7 +26,7 @@ else
     echo "----------------------------------------------------------"
 
     # Change to Directory
-    cd $VAR_WORKSPACE
+    cd $VAR_DIRECTORY
     
     # Change to branch (if not have chages in current branch)
     if [[ `git status --porcelain --untracked-files=no` ]]; then
@@ -45,6 +45,6 @@ else
     gum format --type markdown -- "# CHANGING DIRECTORY:" "- CHANGES: $GIT_CHANGE" "- DIRECTORY: $VAR_DIRECTORY" "- CHECKOUT: $VAR_BRANCH" "- DESCRIPTION: $VAR_DESCRIPTION"
     echo "----------------------------------------------------------"
 
-    bash $SCRIPT_CURRENT_PATH/go-to.sh $VAR_WORKSPACE $SCRIPT_CURRENT_PATH $VAR_BRANCH
+    bash $SCRIPT_CURRENT_PATH/go-to.sh $VAR_DIRECTORY $SCRIPT_CURRENT_PATH $VAR_BRANCH
 
 fi
