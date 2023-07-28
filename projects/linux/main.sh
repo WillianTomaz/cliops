@@ -6,7 +6,7 @@ SCRIPT_CURRENT_PATH=$(dirname "$SCRIPT_PATH_TO_FILE")
 # ---------------------------------------
 
 # Linux Presentation
-gum style --foreground 45 'LINUX -> What you want to do?'
+gum style --foreground "#04B575" '[Menu - Linux] What you want to do?'
 
 # Show the list of projects to choose from
 #       "projects-menu.txt" -> Has a list of folder names of the projects
