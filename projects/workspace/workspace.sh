@@ -22,4 +22,4 @@ else
     bash $SCRIPT_CURRENT_PATH/delete-workspace.sh
 fi
 
-sleep 1
+# sleep 1

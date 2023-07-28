@@ -8,19 +8,16 @@ SCRIPT_PATH_TO_FILE=$(readlink -f "$0")
 SCRIPT_CURRENT_PATH=$(dirname "$SCRIPT_PATH_TO_FILE")
 # ---------------------------------------
 
-TXT_COLOR_GREEN="#04B575"
-
 # Main Presentation
 gum style \
-	--foreground 45 --border-foreground 45 --border double \
-	--margin "1 2" --padding "2 4" \
+	--foreground 45 --border-foreground 45 --border rounded --padding "2 4" \
 	'This is a CLI OPS :)' \
     'To help you automate some stuff'
 
 # Show the list of projects to choose from
 #       "projects-menu.txt" -> Has a list of folder names of the projects
 MY_CHOICE=$(cat $SCRIPT_CURRENT_PATH/projects-menu.txt | gum choose)
-sleep 1
+# sleep 1
 
 MENU_CHOICES_LIST=$(cat $SCRIPT_CURRENT_PATH/projects-menu.txt)
 declare -A menu_to_path
