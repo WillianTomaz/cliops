@@ -21,6 +21,7 @@ do
 done
 
 if [ $MY_CHOICE == "[exit]" ]; then
+    clear
     exit 0
 else
     # Setting up the project address to run its main.sh file

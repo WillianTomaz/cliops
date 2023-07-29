@@ -1,0 +1,3 @@
+kubernetes
+install-tools
+[exit]
