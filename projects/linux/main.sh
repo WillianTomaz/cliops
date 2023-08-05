@@ -11,20 +11,13 @@ gum style --foreground "#04B575" '[Menu - Linux] What you want to do?'
 # Show the list of projects to choose from
 #       "projects-menu.txt" -> Has a list of folder names of the projects
 MY_CHOICE=$(cat $SCRIPT_CURRENT_PATH/projects-menu.txt | gum choose)
-# sleep 1
 
-MENU_CHOICES_LIST=$(cat $SCRIPT_CURRENT_PATH/projects-menu.txt)
-declare -A menu_to_path
-for CHOICE_ITEM in $MENU_CHOICES_LIST
-do
-    menu_to_path["$CHOICE_ITEM"]="$SCRIPT_CURRENT_PATH/$CHOICE_ITEM/main.sh"
-done
+PATH_TO_THE_CHOSEN_PROJECT="$SCRIPT_CURRENT_PATH/$MY_CHOICE/main.sh"
 
 if [ $MY_CHOICE == "[exit]" ]; then
     clear
     exit 0
 else
     # Setting up the project address to run its main.sh file
-    PATH_TO_THE_CHOSEN_PROJECT=${menu_to_path[$MY_CHOICE]}
     bash $PATH_TO_THE_CHOSEN_PROJECT
 fi
