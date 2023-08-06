@@ -77,7 +77,7 @@ elif [ "$MY_CMD_CHOICE" == "workspace" ]; then
         MY_TF_LIST_CHOICE=$(terraform workspace list | gum choose)
         terraform workspace select $MY_TF_LIST_CHOICE
     elif [ "$MY_CMD_SUB_CHOICE" == "delete" ]; then
-        MY_TF_DELETE_CHOICE=$( | gum choose)
+        MY_TF_DELETE_CHOICE=$(terraform workspace list | gum choose)
         terraform workspace delete $MY_TF_DELETE_CHOICE
     else
         clear
