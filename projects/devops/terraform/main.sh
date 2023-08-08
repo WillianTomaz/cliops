@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # ---------------------------------------
 SCRIPT_PATH_TO_FILE=$(readlink -f "$0")
