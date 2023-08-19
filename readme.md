@@ -1,4 +1,5 @@
 # CliOps - Made with 'Shell' and 'Charm Gum'
+![CliOps Flow Main Menu](docs/images/cliops-logo-small.png)
 > ### This is a CLI to help you automate some stuff
 
 
