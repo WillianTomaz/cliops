@@ -14,17 +14,16 @@ gum style \
 	'This is a CLI OPS :)' \
     'To help you automate some stuff'
 
-# Show the list of projects to choose from
-#       "projects-menu.txt" -> Has a list of folder names of the projects
 MY_CHOICE=$(cat $SCRIPT_CURRENT_PATH/projects-menu.txt | gum choose)
-
-PATH_TO_THE_CHOSEN_PROJECT="$SCRIPT_CURRENT_PATH/projects/$MY_CHOICE/main.sh"
 
 if [ $MY_CHOICE == "[exit]" ]; then
     clear
     exit 0
+elif [ $MY_CHOICE == "settings" ]; then
+    PATH_TO_THE_CHOSEN_PROJECT="$SCRIPT_CURRENT_PATH/$MY_CHOICE/main.sh"
+    bash $PATH_TO_THE_CHOSEN_PROJECT $SCRIPT_CURRENT_PATH
 else
-    # Setting up the project address to run its main.sh file
+    PATH_TO_THE_CHOSEN_PROJECT="$SCRIPT_CURRENT_PATH/projects/$MY_CHOICE/main.sh"
     bash $PATH_TO_THE_CHOSEN_PROJECT
 fi
 

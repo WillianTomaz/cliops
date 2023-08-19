@@ -24,5 +24,3 @@ else
     clear
     exit 0
 fi
-
-# sleep 1

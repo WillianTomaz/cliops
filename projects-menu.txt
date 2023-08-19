@@ -1,4 +1,5 @@
 devops
 linux
 workspace
+settings
 [exit]
