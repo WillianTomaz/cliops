@@ -6,8 +6,7 @@ SCRIPT_CURRENT_PATH=$(dirname "$SCRIPT_PATH_TO_FILE")
 VAR_ROOT_PATH=$1
 # ---------------------------------------
 
-# Linux Presentation
-gum style --foreground "#04B575" '[Menu - Set-Options] What you want to do?'
+gum style --foreground "#04B575" '[Menu - Settings/Set-Options] What you want to do?'
 echo ""
 echo '{{ Color "99" "0" " CLIOPS-SETTINGS: " }} {{ Italic "Here you can adjust which options can appear in your CliOps start menu" }}' | gum format -t template
 echo '{{ Color "99" "0" " NOTE: " }} {{ Italic "Use the [space key] to select options, then hit enter!" }}' | gum format -t template
@@ -44,28 +43,3 @@ else
     -- sleep 3
     exit 0
 fi
-
-# if [ "$MY_CHOICE" == "save" ]; then
-#     # Save
-#     bash $SCRIPT_CURRENT_PATH/save-workspace.sh
-# elif [ "$MY_CHOICE" == "restore" ]; then
-#     # Restore
-#     bash $SCRIPT_CURRENT_PATH/restore-workspace.sh
-# elif [ "$MY_CHOICE" == "delete" ]; then
-#     # Exit
-#     bash $SCRIPT_CURRENT_PATH/delete-workspace.sh
-# else
-#     clear
-#     exit 0
-# fi
-
-
-# PATH_TO_THE_CHOSEN_PROJECT="$SCRIPT_CURRENT_PATH/$MY_CHOICE/main.sh"
-
-# if [ $MY_CHOICE == "[exit]" ]; then
-#     clear
-#     exit 0
-# else
-#     # Setting up the project address to run its main.sh file
-#     bash $PATH_TO_THE_CHOSEN_PROJECT
-# fi

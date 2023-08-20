@@ -9,7 +9,7 @@ echo $(gum style --foreground "#04B575" "[Menu - Delete Workspaces]")
 
 if [[ -z $(grep '[^[:space:]]' $SCRIPT_CURRENT_PATH/saved-workspace.txt) ]] ; then
     # The file is empty.
-    echo "Você não tem Workspaces salvos dentro do saved-workspace.txt (Workspace)"
+    echo "You have no Workspaces saved within saved-workspace.txt (Workspace)"
     rm -f $SCRIPT_CURRENT_PATH/saved-workspace.txt
 else
     WORKSPACE_TO_DELETE=$(cat $SCRIPT_CURRENT_PATH/saved-workspace.txt | gum filter)
