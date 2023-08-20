@@ -1,0 +1,1 @@
+20230820-162028-dev_general_routes;/home/willian/repositorios/solinftec/core-infra/terraform/aws/milho-verde/dev-account/general/routes53;dev_general_routes;env/admin.tfvars

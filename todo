@@ -1,0 +1,18 @@
+IDEIA-1(AUTOPILOT?):
+- Verificar se tem arquivos .tf na pasta atual (que está rodando o cliops)
+   se tiver: 
+      - Verificar se tem o arquivo de estado do cliops para prosseguir
+         se tiver:  
+            - Fazer a execução com base nele, por etapa, porque precisa respeitar o tempo dos comandos do terraform
+         senao:
+            - Fazer a criação do arquivo de estado do cliops. Mapear as necessidades -> Workspace para o projeto,
+   senão:
+      - Mostar Mensagem de Erro: A pasta atual não contém arquivos terraform, por favor entre em um projeto com arquivos do terraform! 
+
+
+
+IDEIA-2(AUTOSTART):
+   Ao invés do terraform-autopilot poderia ser 
+   um terraform-auto-start que faria o CD 
+   para a pasta do projeto (.tf) selecionado 
+   e já mudaria para o workspace, se caso tiver 

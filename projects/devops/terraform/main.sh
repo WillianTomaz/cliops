@@ -3,7 +3,22 @@
 # ---------------------------------------
 SCRIPT_PATH_TO_FILE=$(readlink -f "$0")
 SCRIPT_CURRENT_PATH=$(dirname "$SCRIPT_PATH_TO_FILE")
+$VAR_TFVARS_NAME=$1
 # ---------------------------------------
+
+
+# if [[ -z $(grep '[^[:space:]]' $SCRIPT_CURRENT_PATH/saved-auto-start.txt) ]] ; then
+#     # The file is empty.
+#     echo "NÃO DADOS NO ARQUIVO: saved-auto-start.txt"
+# else
+#     gum confirm "
+#     Do you want to continue ???
+#     " || exit 0
+#     echo "TEM DADOS NO ARQUIVO: saved-auto-start.txt"
+#     source $SCRIPT_CURRENT_PATH/get-autostart.sh
+#     func_get_values_autostart $SCRIPT_CURRENT_PATH
+#     echo $func_gva_result
+# fi
 
 gum style --foreground "#04B575" '[Menu - DevOps/Terraform]'
 echo ""
@@ -11,7 +26,7 @@ echo '{{ Color "99" "0" " NOTE: " }}' | gum format -t template
 echo '{{ Color "99" "0" " (Important) " }} {{ Italic "To be able to use this module in the CLI, you need to have terraform configured on your machine!" }}' | gum format -t template
 echo ""
 
-MY_CMD_CHOICE=$(gum choose "init" "plan" "apply" "destroy" "workspace" "[exit]")
+MY_CMD_CHOICE=$(gum choose "init" "plan" "apply" "destroy" "workspace" "auto_start" "[exit]")
 
 if [ "$MY_CMD_CHOICE" == "init" ]; then
     MY_CMD_SUB_CHOICE=$(gum choose "init" "init_reconfigure")
@@ -83,6 +98,9 @@ elif [ "$MY_CMD_CHOICE" == "workspace" ]; then
         clear
         exit 0
     fi
+
+elif [ "$MY_CMD_CHOICE" == "auto_start" ]; then
+    bash $SCRIPT_CURRENT_PATH/main-autostart.sh
 
 else
     clear
